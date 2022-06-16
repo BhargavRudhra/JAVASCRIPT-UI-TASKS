@@ -16,34 +16,36 @@
       </tr>
       <tr>
         <td>
-          <input type="button" value="show" onclick="disp_TZ()" />
+          <input type="button" value="show" onclick="display_TIMEZONE()" />
         </td>
       </tr>
-      <form name="f1">
+      <form name="form">
         <tr>
           <td>
-            <select name="tz" onchange="disp_TZ()"></select>
+            <select name="timezone" onchange="display_TIMEZONE()"></select>
           </td>
         </tr>
       </form>
       <tr>
         <td>
-          <span id="ct"> Timezone here</span>
+          <span id="countrytime"> Timezone here</span>
         </td>
       </tr>
     </table>
     <script>
-      function disp_TZ() {
-        var tz = f1.tz.options[f1.tz.options.selectedIndex].value;
-        var str = new Date().toLocaleString("en-NZ", {
-          timeZone: tz,
+      function display_TIMEZONE() {
+        var timezone =
+          form.timezone.options[form.timezone.options.selectedIndex].value;
+        var string = new Date().toLocaleString("en-NZ", {
+          timeZone: timezone,
           timeZoneName: "short",
         });
-        document.getElementById("ct").innerHTML = str + "," + tz;
-        display_c();
+        document.getElementById("countrytime").innerHTML =
+          string + "," + timezone;
+        display_country();
         return;
       }
-      function display_c() {
+      function display_county() {
         refresh = 1000;
         mytime = setTimeout("disp_TZ", refresh);
         return;
@@ -469,7 +471,7 @@
         "UTC",
       ];
       for (i = 0; i < my_timezones.length; i++) {
-        addOption(document.f1.tz, my_timezones[i], my_timezones[i]);
+        addOption(document.form.timezone, my_timezones[i], my_timezones[i]);
       }
       function addOption(selectbox, text, value) {
         var optn = document.createElement("OPTION");
