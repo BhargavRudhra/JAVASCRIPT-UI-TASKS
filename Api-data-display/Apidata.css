@@ -12,10 +12,3 @@ table {
   left: 1100px;
   top: 200px;
 }
-button {
-  position: relative;
-  top: 230px;
-  left: 62%;
-  border-radius: 2px;
-  background-color: salmon;
-}
