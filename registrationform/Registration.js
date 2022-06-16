@@ -7,7 +7,6 @@ function formValidation() {
   var uemail = document.registration.email;
   var umgender = document.registration.mgender;
   var ufgender = document.registration.fgender;
-
   var data = new Object();
   data.usersid = uid;
   data.password = passid;
@@ -17,15 +16,6 @@ function formValidation() {
   data.useremail = uemail;
   data.usermalegender = umgender;
   data.userfemalegender = ufgender;
-
-  //   var i;
-  //   var langArray = new Array();
-  //   for (i = 0; i < lan.length; i++) {
-  //     if (lan[i].checked) {
-  //       langArray.push(lan[i].value);
-  //     }
-  //   }
-
   if (userid_validation(uid, 7, 12)) {
     if (passid_validation(passid, 6, 12)) {
       if (allLetter(uname)) {
@@ -42,7 +32,6 @@ function formValidation() {
   }
   return false;
 }
-
 function userid_validation(uid, mx, my) {
   var uid_len = uid.value.length;
   if (uid_len == 0 || uid_len >= my || uid_len < mx) {
